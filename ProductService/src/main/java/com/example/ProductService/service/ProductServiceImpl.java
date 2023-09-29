@@ -20,6 +20,7 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public long addProduct(ProductRequest productRequest) {
         log.info("AddingProduct...");
+        log.info("Product Request Object {}",productRequest);
         Product product= Product.builder().productName(productRequest.getName()).quantity(productRequest.
                 getQuantity()).price(productRequest.getPrice()).build();
         productRepository.save(product);
